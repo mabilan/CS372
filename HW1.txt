@@ -1,2 +1,3 @@
 this is the initial text file
+TOTALLY WON'T CAUSE A CONFLICT LATER
 Merge conflicts are fun
