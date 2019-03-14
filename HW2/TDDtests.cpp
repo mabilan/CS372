@@ -39,8 +39,8 @@ TEST_CASE("Testing for TDD Kata - String Calculator") {
     }
 
     SECTION("Negative values should throw an exception"){
-        CHECK_THROWS_WITH(Add("-1"),"Negative values are not allowed [-1]");
-        CHECK_THROWS_WITH(Add("-1,-2"),"Negative values are not allowed [-1,-2]");
-        CHECK_THROWS_WITH(Add("-1,2,-3"),"Negative values are not allowed [-1,-3]");
+        CHECK_THROWS_WITH(Add("-1"),"Negative values are not allowed [ -1 ]");
+        CHECK_THROWS_WITH(Add("-1,-2"),"Negative values are not allowed [ -1 -2 ]");
+        CHECK_THROWS_WITH(Add("-1,2,-3"),"Negative values are not allowed [ -1 -3 ]");
     }
 }
