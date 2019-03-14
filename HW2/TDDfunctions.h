@@ -14,8 +14,11 @@ int Add(const std::string &parameterList){
     std::istringstream stringStream(parameterList);
     std::string token;
 
-    while(std::getline(stringStream, token, ',')){
-        sum += std::stoi(token);
+    while(std::getline(stringStream, token)){
+        std::istringstream tempStream(token);
+        while(std::getline(tempStream, token, ',')) {
+            sum += std::stoi(token);
+        }
     }
     return sum;
 }

@@ -25,4 +25,11 @@ TEST_CASE("Testing for TDD Kata - String Calculator") {
         REQUIRE(Add("1,2,3,4") == 10);
         REQUIRE(Add("1,2,3,4,5") == 15);
     }
+
+    SECTION("Allow ',' and '\\n' to delimit entered numbers"){
+        REQUIRE(Add("1,2,3") == 6);
+        REQUIRE(Add("1\n2\n3") == 6);
+        REQUIRE(Add("1\n2,3") == 6);
+        REQUIRE(Add("1\n4,4,\n10")==19);
+    }
 }
