@@ -32,4 +32,9 @@ TEST_CASE("Testing for TDD Kata - String Calculator") {
         REQUIRE(Add("1\n2,3") == 6);
         REQUIRE(Add("1\n4,4,\n10")==19);
     }
+
+    SECTION("Allow for custom delimiter by preceding parameters with '//[delimiter]\\n'"){
+        REQUIRE(Add("//;\n1;2;3")==6);
+        REQUIRE(Add("//a\n1a2a3")==6);
+    }
 }
