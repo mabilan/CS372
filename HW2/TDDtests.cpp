@@ -17,12 +17,12 @@ TEST_CASE("Testing for TDD Kata - String Calculator") {
     }
 
     SECTION("Testing double parameter sum return"){
-        REQUIRE(Add("1", "2") == 3);
+        REQUIRE(Add("1,2") == 3);
     }
 
     SECTION("Test for indeterminate amount of numbers entered"){
-        REQUIRE(Add("1","2","3") == 6);
-        REQUIRE(Add("1","2","3","4") == 10);
-        REQUIRE(Add("1","2","3","4","5") == 15);
+        REQUIRE(Add("1,2,3") == 6);
+        REQUIRE(Add("1,2,3,4") == 10);
+        REQUIRE(Add("1,2,3,4,5") == 15);
     }
 }
