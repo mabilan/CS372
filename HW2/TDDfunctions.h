@@ -8,15 +8,24 @@
 
 #include <string>
 #include <sstream>
+#include <iostream>
 
 int Add(const std::string &parameterList){
     int sum = 0;
     std::istringstream stringStream(parameterList);
     std::string token;
+    char delimiter = ',';
 
     while(std::getline(stringStream, token)){
+        if (token.length()==3){
+            if(token.substr(0,2)=="//") {
+                delimiter = token[2];
+                continue;
+            }
+        }
+
         std::istringstream tempStream(token);
-        while(std::getline(tempStream, token, ',')) {
+        while(std::getline(tempStream, token, delimiter)){
             sum += std::stoi(token);
         }
     }
