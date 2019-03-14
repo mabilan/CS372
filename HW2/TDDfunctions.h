@@ -8,13 +8,15 @@
 
 #include <string>
 #include <sstream>
-#include <iostream>
+#include <vector>
 
 int Add(const std::string &parameterList){
     int sum = 0;
     std::istringstream stringStream(parameterList);
     std::string token;
     char delimiter = ',';
+    std::vector<int> badValues;
+    bool willThrow = false;
 
     while(std::getline(stringStream, token)){
         if (token.length()==3){
@@ -26,9 +28,25 @@ int Add(const std::string &parameterList){
 
         std::istringstream tempStream(token);
         while(std::getline(tempStream, token, delimiter)){
-            sum += std::stoi(token);
+            int tempVal = std::stoi(token);
+
+            if(tempVal<0){
+                badValues.push_back(tempVal);
+                willThrow = true;
+            }
+
+            sum += tempVal;
         }
     }
+    if (willThrow){
+        std::string message = "Negative values are not allowed [ ";
+        for(auto value : badValues){
+            message += std::to_string(value) + " ";
+        }
+        message += "]";
+        throw std::runtime_error(message);
+    }
+
     return sum;
 }
 
