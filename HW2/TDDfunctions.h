@@ -7,7 +7,6 @@
 #define HW2_TDDFUNCTIONS_H
 
 #include <string>
-#include <iostream>
 #include <sstream>
 
 int Add(const std::string &parameterList){
@@ -15,7 +14,7 @@ int Add(const std::string &parameterList){
     std::istringstream stringStream(parameterList);
     std::string token;
 
-    while(false){
+    while(std::getline(stringStream, token, ',')){
         sum += std::stoi(token);
     }
     return sum;
