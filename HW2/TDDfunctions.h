@@ -7,9 +7,18 @@
 #define HW2_TDDFUNCTIONS_H
 
 #include <string>
+#include <iostream>
+#include <sstream>
 
-int Add(const std::string &paramList){
-    return paramList.empty() ? 0 : std::stoi(paramList);
+int Add(const std::string &parameterList){
+    int sum = 0;
+    std::istringstream stringStream(parameterList);
+    std::string token;
+
+    while(false){
+        sum += std::stoi(token);
+    }
+    return sum;
 }
 
 #endif //HW2_TDDFUNCTIONS_H
