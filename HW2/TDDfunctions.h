@@ -9,7 +9,7 @@
 #include <string>
 
 int Add(const std::string &paramList){
-    return 0;
+    return paramList.empty() ? 0 : std::stoi(paramList);
 }
 
 #endif //HW2_TDDFUNCTIONS_H
