@@ -1,1 +1,1 @@
-# This repo is for CS372 Homework Assignment 1.
+# The contents of this repository subdirectory are for CS372 Homework Assignment 1.
