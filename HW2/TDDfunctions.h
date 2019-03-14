@@ -9,7 +9,18 @@
 #include <string>
 
 int Add(const std::string &param1="", const std::string &param2=""){
-    return 0;
+    int term1, term2;
+
+    if (param1.empty()){
+        term1 = 0;
+    }
+    else{
+        term1 = std::stoi(param1);
+    }
+
+    int sum = term1;
+
+    return sum;
 }
 
 #endif //HW2_TDDFUNCTIONS_H
