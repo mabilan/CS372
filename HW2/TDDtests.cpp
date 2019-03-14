@@ -11,4 +11,8 @@ TEST_CASE("Testing for TDD Kata - String Calculator") {
     SECTION("Return sum of 0 string numbers"){
         REQUIRE(Add("") == 0);
     }
+
+    SECTION("Testing single parameter sum return"){
+        REQUIRE(Add("1") == 1);
+    }
 }
