@@ -18,7 +18,14 @@ int Add(const std::string &param1="", const std::string &param2=""){
         term1 = std::stoi(param1);
     }
 
-    int sum = term1;
+    if (param2.empty()){
+        term2 = 0;
+    }
+    else{
+        term2 = std::stoi(param2);
+    }
+
+    int sum = term1 + term2;
 
     return sum;
 }
