@@ -26,7 +26,12 @@ gsave					% Save a copy of the current settings
   fill	 				%    and fill it.
 grestore                % Go back to the original settings
 
-1 setlinewidth			% Make the box lines wider
-300 72 box stroke		% Draw a black box
-
+400 108 translate		% set new origin
+0 45 360 {
+	gsave				% store original rotation
+		rotate			% rotate by counter degrees
+		1 setlinewidth		% Make the box lines wider
+		0 0 box stroke		% Draw a black box
+	grestore			% restore original orientation
+} for
 showpage
