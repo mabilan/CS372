@@ -2,8 +2,8 @@
 % Example of rotation... draws 36 lines in a circular pattern
 
 0 10 360 {		% Go from 0 to 360 degrees in 10 degree steps
-  dup
-  /counter exch def
+  dup				% copy the loop counter
+  /counter exch def % store the copy of the loop counter
   newpath		% Start a new path
 
   gsave			% Keep rotations temporary
