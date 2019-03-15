@@ -12,9 +12,19 @@
    closepath
 } def
 
-gsave				% Preserve the old coordinates
-  72 72 translate		% Set origin to (72, 72)
-  0 0 box stroke		% Draw the box at the new origin
-grestore			% Restore the old coordinates
+72 144 360 { % loop over 3 xcoord origins
+	/xcoord exch def
 
+	72 144 360 { % loop over 3 y coord bases
+		/ycoord exch def
+		
+		gsave				% Preserve the old coordinates
+		
+			xcoord ycoord translate		% Set origin to (xcoord, ycoord)
+			0 0 box stroke				% Draw the box at the new origin
+		
+		grestore			% Restore the old coordinates
+
+	} for
+} for
 showpage
